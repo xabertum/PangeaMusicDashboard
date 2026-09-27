@@ -1,0 +1,24 @@
+# Dependencias y artefactos de build (se instalan/generan dentro del contenedor)
+node_modules
+dist
+.angular
+tmp
+out-tsc
+
+# Control de versiones y configuración de editor/IDE
+.git
+.gitignore
+.vscode
+.idea
+*.sublime-workspace
+
+# Documentación e infraestructura (no necesarias dentro de la imagen)
+README.md
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Logs y cobertura
+npm-debug.log
+coverage
+*.log

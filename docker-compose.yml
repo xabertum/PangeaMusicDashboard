@@ -1,0 +1,10 @@
+services:
+  pangea-music-dashboard:
+    build:
+      context: ./pangea-music-dashboard
+      dockerfile: Dockerfile
+    image: pangea-music-dashboard:latest
+    container_name: pangea-music-dashboard
+    ports:
+      - "8080:80"
+    restart: unless-stopped

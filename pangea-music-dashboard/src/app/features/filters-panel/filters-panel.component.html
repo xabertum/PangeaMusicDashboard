@@ -1,0 +1,102 @@
+<aside class="filters-panel">
+  <div class="filters-header">
+    <h2>Filtros</h2>
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-group-header">
+      <label for="busqueda-texto">Buscar artista / álbum / subgénero</label>
+      <button type="button" class="btn-clear" aria-label="Limpiar búsqueda" title="Limpiar búsqueda" (click)="limpiarTextoBusqueda()">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 7h16M10 11v6M14 11v6M9 7l1-3h4l1 3m-9 0 1 13h10l1-13" />
+        </svg>
+      </button>
+    </div>
+    <input
+      id="busqueda-texto"
+      type="search"
+      placeholder="p. ej. Miles Davis, Jazz…"
+      [(ngModel)]="textoBusqueda"
+    />
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-group-header">
+      <span class="filter-label">Rango de años</span>
+      <button type="button" class="btn-clear" aria-label="Limpiar rango de años" title="Limpiar rango de años" (click)="limpiarRangoAnios()">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 7h16M10 11v6M14 11v6M9 7l1-3h4l1 3m-9 0 1 13h10l1-13" />
+        </svg>
+      </button>
+    </div>
+    <div class="year-range">
+      <input
+        type="number"
+        [placeholder]="rangoAnios()[0].toString()"
+        [ngModel]="anioMin"
+        (ngModelChange)="anioMin = $event"
+        aria-label="Año mínimo"
+      />
+      <span>–</span>
+      <input
+        type="number"
+        [placeholder]="rangoAnios()[1].toString()"
+        [ngModel]="anioMax"
+        (ngModelChange)="anioMax = $event"
+        aria-label="Año máximo"
+      />
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-group-header">
+      <span class="filter-label">Género / Continente</span>
+      <button type="button" class="btn-clear" aria-label="Limpiar géneros y continentes" title="Limpiar géneros y continentes" (click)="limpiarGeneros()">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 7h16M10 11v6M14 11v6M9 7l1-3h4l1 3m-9 0 1 13h10l1-13" />
+        </svg>
+      </button>
+    </div>
+    <div class="checkbox-list checkbox-list--tall">
+      @for (genero of generosDisponibles(); track genero) {
+        <label class="checkbox-item">
+          <input
+            type="checkbox"
+            [checked]="generoSeleccionado(genero)"
+            (change)="toggleGenero(genero, $any($event.target).checked)"
+          />
+          {{ genero }}
+        </label>
+      }
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-group-header">
+      <label for="busqueda-pais">País</label>
+      <button type="button" class="btn-clear" aria-label="Limpiar filtro de país" title="Limpiar filtro de país" (click)="limpiarPaises()">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 7h16M10 11v6M14 11v6M9 7l1-3h4l1 3m-9 0 1 13h10l1-13" />
+        </svg>
+      </button>
+    </div>
+    <input
+      id="busqueda-pais"
+      type="search"
+      placeholder="Filtrar países…"
+      [(ngModel)]="busquedaPais"
+    />
+    <div class="checkbox-list checkbox-list--tall">
+      @for (pais of paisesFiltrados(); track pais) {
+        <label class="checkbox-item">
+          <input
+            type="checkbox"
+            [checked]="paisSeleccionado(pais)"
+            (change)="togglePais(pais, $any($event.target).checked)"
+          />
+          {{ pais }}
+        </label>
+      }
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,30 @@
+<header class="app-header">
+  <img class="app-logo" src="icon.svg" alt="" width="56" height="56" />
+  <div class="app-header-text">
+    <h1>Pangea Music Dashboard</h1>
+    <p>Explora la colección de música: géneros, países, artistas y años de publicación.</p>
+  </div>
+</header>
+
+<main class="app-layout">
+  @if (loading()) {
+    <div class="state-message">Cargando la colección de música…</div>
+  } @else if (error()) {
+    <div class="state-message state-message--error">{{ error() }}</div>
+  } @else {
+    <app-filters-panel class="layout-sidebar" />
+
+    <div class="layout-content">
+      <app-kpi-cards />
+
+      <div class="charts-grid">
+        <app-genre-chart />
+        <app-year-chart />
+        <app-subgenre-chart />
+        <app-country-chart />
+      </div>
+
+      <app-albums-table />
+    </div>
+  }
+</main>

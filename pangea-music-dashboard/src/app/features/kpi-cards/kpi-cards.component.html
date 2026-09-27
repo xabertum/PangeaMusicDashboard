@@ -1,0 +1,26 @@
+<section class="kpi-grid" aria-label="Indicadores clave">
+  <article class="kpi-card">
+    <span class="kpi-value">{{ totalAlbumes() | number }}</span>
+    <span class="kpi-label">Álbumes</span>
+  </article>
+  <article class="kpi-card">
+    <span class="kpi-value">{{ totalArtistas() | number }}</span>
+    <span class="kpi-label">Artistas</span>
+  </article>
+  <article class="kpi-card">
+    <span class="kpi-value">{{ totalGeneros() | number }}</span>
+    <span class="kpi-label">Géneros / Continentes</span>
+  </article>
+  <article class="kpi-card">
+    <span class="kpi-value">{{ totalPaises() | number }}</span>
+    <span class="kpi-label">Países</span>
+  </article>
+  <article class="kpi-card">
+    @if (rangoAnios(); as rango) {
+      <span class="kpi-value">{{ rango[0] }}–{{ rango[1] }}</span>
+    } @else {
+      <span class="kpi-value">—</span>
+    }
+    <span class="kpi-label">Rango de años</span>
+  </article>
+</section>

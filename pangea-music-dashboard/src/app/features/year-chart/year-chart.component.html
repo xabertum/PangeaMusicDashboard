@@ -1,0 +1,20 @@
+<div class="chart-card">
+  <div class="chart-header">
+    <h3>Evolución de publicaciones por década</h3>
+    @if (decadaSeleccionada(); as decada) {
+      <button type="button" class="chip-filter" (click)="limpiarSeleccion()" title="Quitar filtro de década">
+        {{ decada }}s ✕
+      </button>
+    }
+  </div>
+  <p class="chart-hint">Haz clic en una década para filtrar los álbumes.</p>
+  <div class="chart-container">
+    <canvas
+      baseChart
+      [type]="chartType"
+      [data]="chartData()"
+      [options]="chartOptions"
+      (chartClick)="onChartClick($event)"
+    ></canvas>
+  </div>
+</div>
