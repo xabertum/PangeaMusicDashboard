@@ -75,12 +75,17 @@ export class AlbumsTableComponent {
   }
 
   /**
-   * Descarta cualquier texto entre paréntesis del nombre (p. ej. el instrumento
-   * en "Anita O'Day (Vocal)") porque ensucia la búsqueda en Spotify.
+   * Descarta el texto entre paréntesis o corchetes del nombre (p. ej. el
+   * instrumento en "Anita O'Day (Vocal)" o "[Henry Mancini]") porque ensucia
+   * la búsqueda en Spotify.
    */
   private limpiarNombreParaBusqueda(nombre: string): string {
-    const limpio = nombre.replace(/\([^)]*\)?/g, ' ').replace(/\s+/g, ' ').trim();
-    return limpio || nombre.trim();
+    const limpio = nombre
+      .replace(/\([^)]*\)?/g, ' ')
+      .replace(/\[[^\]]*\]?/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    return limpio || nombre.replace(/[()[\]]/g, ' ').replace(/\s+/g, ' ').trim() || nombre.trim();
   }
 
   iconoOrden(columna: ColumnaOrden): string {
