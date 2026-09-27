@@ -70,8 +70,17 @@ export class AlbumsTableComponent {
   }
 
   abrirEnSpotify(album: AlbumRecord): void {
-    const consulta = encodeURIComponent(album.artista);
+    const consulta = encodeURIComponent(this.limpiarNombreParaBusqueda(album.artista));
     window.location.assign(`spotify:search:${consulta}`);
+  }
+
+  /**
+   * Descarta cualquier texto entre paréntesis del nombre (p. ej. el instrumento
+   * en "Anita O'Day (Vocal)") porque ensucia la búsqueda en Spotify.
+   */
+  private limpiarNombreParaBusqueda(nombre: string): string {
+    const limpio = nombre.replace(/\([^)]*\)?/g, ' ').replace(/\s+/g, ' ').trim();
+    return limpio || nombre.trim();
   }
 
   iconoOrden(columna: ColumnaOrden): string {
