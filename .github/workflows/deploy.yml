@@ -1,0 +1,48 @@
+name: Deploy dashboard to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "pangea-music-dashboard/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: pangea-music-dashboard/package-lock.json
+
+      - name: Install dependencies
+        working-directory: pangea-music-dashboard
+        run: npm ci
+
+      - name: Build (static, base href for project page)
+        working-directory: pangea-music-dashboard
+        run: npx ng build --base-href /PangeaMusicDashboard/
+
+      - name: Add SPA fallback (404.html)
+        run: cp pangea-music-dashboard/dist/pangea-music-dashboard/browser/index.html pangea-music-dashboard/dist/pangea-music-dashboard/browser/404.html
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: pangea-music-dashboard/dist/pangea-music-dashboard/browser
+          publish_branch: gh-pages
