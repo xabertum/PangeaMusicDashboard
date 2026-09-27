@@ -4,7 +4,7 @@ import { MusicDataService } from '../../core/services/music-data.service';
 
 /**
  * Panel lateral de filtros: género/continente, país, rango de años y
- * búsqueda de texto libre sobre artista/álbum/subgénero.
+ * búsqueda de texto libre sobre artista/álbum/subgénero/año.
  */
 @Component({
   selector: 'app-filters-panel',

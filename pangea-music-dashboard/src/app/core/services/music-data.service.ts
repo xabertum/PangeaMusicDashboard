@@ -76,7 +76,7 @@ export class MusicDataService {
         return false;
       }
       if (texto) {
-        const haystack = `${album.artista} ${album.album} ${album.subgenero}`.toLowerCase();
+        const haystack = `${album.artista} ${album.album} ${album.subgenero} ${album.anio ?? ''}`.toLowerCase();
         if (!haystack.includes(texto)) {
           return false;
         }
