@@ -2849,20 +2849,22 @@ ROCK & Folk ROLL,Bubblegum pop / Rock,EEUU,The Archies,,The Archies - 20 Greates
 ROCK & Folk ROLL,Surf pop / California sound,EEUU,The Beach Boys,,Anthology Cd 1
 ROCK & Folk ROLL,Surf pop / California sound,EEUU,The Beach Boys,,Anthology Cd 2
 ROCK & Folk ROLL,Surf pop / California sound,EEUU,The Beach Boys,2012,That's Why God Made The Radio
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1961,The Early Tapes Of The Beatles
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1963,Please Please Me
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1963,With The Beatles
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1964,A Hard Day's Night
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1964,Beatles For Sale
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1965,Help!
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1965,Rubber Soul
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1966,Revolver
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1967,Magical Mystery Tour
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1967,Sgt. Pepper's Lonely Hearts Club Band
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1969,Abbey Road
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1969,Yellow Submarine
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1970,Let It Be
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1996,Anthology
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,61_TheEarlyTapesOfTheBeatles
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,63_PleasePleaseMe
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,63_WithTheBeatles
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,64_AHardDay'sNight
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,64_BeatlesForSale
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,65_Help!
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,65_RubberSoul
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,66_Revolver
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,67_MagicalMysteryTour
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,67_SgtPepper'sLonelyHeartsClubBand
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,68_WhiteAlbum
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,69_AbbeyRoad
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,69_YellowSubmarine
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,70_LetItBe
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,96_Anthology
+ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,Singles_PastMasters
 ROCK & Folk ROLL,Garage rock / Funk,EEUU,The Black Dynamites,1993,The Black Dynamites - The Black Dynamites (60's) [Indo Rock]
 ROCK & Folk ROLL,Blues rock / Psychedelic,EEUU,The Blues Project,,XxXx -  the best of
 ROCK & Folk ROLL,Blues rock / Psychedelic,EEUU,The Blues Project,1973,Reunion in Central Park [1990 RE]
@@ -4356,6 +4358,19 @@ ROCK & Folk ROLL,Surf pop / California sound,EEUU,The Beach Boys,,Rarities & Mis
 ROCK & Folk ROLL,Surf pop / California sound,EEUU,The Beach Boys,,Unsurpassed Masters Vol.07 - Today sessions
 ROCK & Folk ROLL,Surf pop / California sound,EEUU,The Beach Boys,,Unsurpassed Masters Vol.17 - Smile sessions
 ROCK & Folk ROLL,Surf pop / California sound,EEUU,The Beach Boys,,Vigotone smile
+ROCK & Folk ROLL,The Beatles,,64_BeatlesForSale,,LYRICS
+ROCK & Folk ROLL,The Beatles,,65_Help!,,LYRICS
+ROCK & Folk ROLL,The Beatles,,65_RubberSoul,,LYRICS
+ROCK & Folk ROLL,The Beatles,,66_Revolver,,LYRICS
+ROCK & Folk ROLL,The Beatles,,67_SgtPepper'sLonelyHeartsClubBand,,lyrics
+ROCK & Folk ROLL,The Beatles,,68_WhiteAlbum,,Disc1
+ROCK & Folk ROLL,The Beatles,,68_WhiteAlbum,,Disc2
+ROCK & Folk ROLL,The Beatles,,68_WhiteAlbum,,lyrics
+ROCK & Folk ROLL,The Beatles,,69_AbbeyRoad,,lyrics
+ROCK & Folk ROLL,The Beatles,,70_LetItBe,,lyrics
+ROCK & Folk ROLL,The Beatles,,Singles_PastMasters,,LYRICS
+ROCK & Folk ROLL,The Beatles,,Singles_PastMasters,,PastMasters1
+ROCK & Folk ROLL,The Beatles,,Singles_PastMasters,,PastMasters2
 ROCK & Folk ROLL,Blues rock / Psychedelic,EEUU,The Blues Project,1997,Blues Project Anthology (Disc 2)
 ROCK & Folk ROLL,Folk rock / Country rock / Psychedelic,EEUU,The Byrds,2003,The Essential Byrds [Compilation] (CD2)
 ROCK & Folk ROLL,Rock and roll / Country,EEUU,The Everly Brothers,2008,White Collection [WHITE217] (CD #2)
@@ -4996,7 +5011,3 @@ Recopilaciones,Earth's music,,VA (1996) - The Rough Guide To The Music Of Kenya 
 Recopilaciones,World Music Network,,VA (2002) - The Rough Guide To Paris Cafe Music,,VA - The Rough Guide To Paris Cafe Music
 Recopilaciones,Earth's music,,VA (2003) - The Rough Guide To Chicago Blues,,
 Recopilaciones,Earth's music,,VA (2007) - The Rough Guide To The Blues,,
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1968,The Beatles (White Album) (Disc 1)
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,1968,The Beatles (White Album) (Disc 2)
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,"Past Masters, Volume One"
-ROCK & Folk ROLL,Rock and roll / Pop / Psych-rock,Reino Unido,The Beatles,,"Past Masters, Volume Two"
