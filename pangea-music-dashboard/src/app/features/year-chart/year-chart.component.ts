@@ -30,8 +30,8 @@ export class YearChartComponent {
         {
           label: 'Álbumes',
           data: datos.map((d) => d.value),
-          borderColor: '#8eb0d1',
-          backgroundColor: 'rgba(142, 176, 209, 0.25)',
+          borderColor: '#93acc4',
+          backgroundColor: 'rgba(147, 172, 196, 0.25)',
           pointBackgroundColor: datos.map((_, i) => colorPorIndice(i)),
           pointBorderColor: '#ffffff',
           fill: true,
