@@ -3,9 +3,7 @@ export const CHART_PALETTE = [
   '#8fae9c', // salvia
   '#93acc4', // azul bruma
   '#d3b98c', // arena
-  '#b9a6c2', // lavanda grisácea
-  '#c9a597', // terracota suave
-  '#a9b98f'  // verde oliva claro
+  '#b9a6c2'  // lavanda grisácea
 ];
 
 /** Color de las barras no seleccionadas cuando hay un filtro activo. */
