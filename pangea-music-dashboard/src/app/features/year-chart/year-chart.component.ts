@@ -1,6 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { colorPorIndice } from '../../core/chart-palette';
 import { MusicDataService } from '../../core/services/music-data.service';
 
 /** Gráfico de evolución del número de álbumes publicados por década. */
@@ -29,11 +30,14 @@ export class YearChartComponent {
         {
           label: 'Álbumes',
           data: datos.map((d) => d.value),
-          borderColor: '#7d9083',
-          backgroundColor: 'rgba(125, 144, 131, 0.2)',
+          borderColor: '#8eb0d1',
+          backgroundColor: 'rgba(142, 176, 209, 0.25)',
+          pointBackgroundColor: datos.map((_, i) => colorPorIndice(i)),
+          pointBorderColor: '#ffffff',
           fill: true,
           tension: 0.3,
-          pointRadius: 3
+          pointRadius: 5,
+          pointHoverRadius: 7
         }
       ]
     };

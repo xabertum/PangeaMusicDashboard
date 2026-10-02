@@ -1,10 +1,8 @@
 import { Component, computed, inject } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { CHART_MUTED, colorPorIndice } from '../../core/chart-palette';
 import { MusicDataService } from '../../core/services/music-data.service';
-
-const COLOR_BASE = '#9aaa9b';
-const COLOR_ATENUADO = '#e6ece5';
 
 /**
  * Gráfico de barras horizontal con el top de países por número de álbumes.
@@ -39,8 +37,8 @@ export class CountryChartComponent {
         {
           label: 'Álbumes',
           data: datos.map((d) => d.value),
-          backgroundColor: datos.map((d) =>
-            seleccionado && d.label !== seleccionado ? COLOR_ATENUADO : COLOR_BASE
+          backgroundColor: datos.map((d, i) =>
+            seleccionado && d.label !== seleccionado ? CHART_MUTED : colorPorIndice(i)
           ),
           borderRadius: 6
         }

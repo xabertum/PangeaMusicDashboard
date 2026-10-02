@@ -1,13 +1,8 @@
 import { Component, computed, inject } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { colorPorIndice } from '../../core/chart-palette';
 import { MusicDataService } from '../../core/services/music-data.service';
-
-const PALETTE = [
-  '#7d9083', '#9aaa9b', '#a89f82', '#87978e', '#b2a990',
-  '#748b7c', '#a9b4a1', '#948c78', '#8aa09b', '#aaa586',
-  '#879a80', '#71857c', '#a3a28d', '#9aa899', '#7b8974', '#b0af9b'
-];
 
 /** Gráfico de barras con la distribución de álbumes por género/continente. */
 @Component({
@@ -35,7 +30,7 @@ export class GenreChartComponent {
         {
           label: 'Álbumes',
           data: datos.map((d) => d.value),
-          backgroundColor: datos.map((_, i) => PALETTE[i % PALETTE.length]),
+          backgroundColor: datos.map((_, i) => colorPorIndice(i)),
           borderRadius: 6
         }
       ]
