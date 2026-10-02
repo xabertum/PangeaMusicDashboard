@@ -13,6 +13,7 @@
           <th (click)="ordenarPor('genero')">Género / Continente <span class="order-icon">{{ iconoOrden('genero') }}</span></th>
           <th (click)="ordenarPor('subgenero')">Subgénero <span class="order-icon">{{ iconoOrden('subgenero') }}</span></th>
           <th (click)="ordenarPor('pais')">País <span class="order-icon">{{ iconoOrden('pais') }}</span></th>
+          <th (click)="ordenarPor('sello')">Sello <span class="order-icon">{{ iconoOrden('sello') }}</span></th>
           <th class="spotify-column">Spotify</th>
         </tr>
       </thead>
@@ -25,6 +26,7 @@
             <td>{{ album.genero }}</td>
             <td>{{ album.subgenero }}</td>
             <td>{{ album.pais }}</td>
+            <td>{{ album.sello || '—' }}</td>
             <td class="spotify-column">
               <button
                 type="button"
@@ -41,7 +43,7 @@
           </tr>
         } @empty {
           <tr>
-            <td colspan="7" class="no-results">No hay álbumes que coincidan con los filtros seleccionados.</td>
+            <td colspan="8" class="no-results">No hay álbumes que coincidan con los filtros seleccionados.</td>
           </tr>
         }
       </tbody>

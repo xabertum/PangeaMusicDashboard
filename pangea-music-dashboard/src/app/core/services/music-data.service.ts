@@ -10,6 +10,7 @@ const EMPTY_FILTERS: AlbumFilters = {
   generos: [],
   paises: [],
   subgeneros: [],
+  sellos: [],
   anioMin: null,
   anioMax: null,
   texto: ''
@@ -44,6 +45,14 @@ export class MusicDataService {
     this.uniqueSorted(this.albumsSignal().map((a) => a.pais))
   );
 
+  /** Sellos discográficos presentes en el CSV, ordenados por número de álbumes. */
+  readonly sellosDisponibles = computed(() =>
+    this.countBy(
+      this.albumsSignal().filter((a) => a.sello),
+      (a) => a.sello
+    ).map((d) => d.label)
+  );
+
   /** Rango de años [min, max] disponible en los datos. */
   readonly rangoAnios = computed<[number, number]>(() => {
     const anios = this.albumsSignal()
@@ -69,6 +78,9 @@ export class MusicDataService {
       if (filtros.subgeneros.length > 0 && !filtros.subgeneros.includes(album.subgenero)) {
         return false;
       }
+      if (filtros.sellos.length > 0 && !filtros.sellos.includes(album.sello)) {
+        return false;
+      }
       if (filtros.anioMin !== null && album.anio !== null && album.anio < filtros.anioMin) {
         return false;
       }
@@ -76,7 +88,7 @@ export class MusicDataService {
         return false;
       }
       if (texto) {
-        const haystack = `${album.artista} ${album.album} ${album.subgenero} ${album.anio ?? ''}`.toLowerCase();
+        const haystack = `${album.artista} ${album.album} ${album.subgenero} ${album.sello} ${album.anio ?? ''}`.toLowerCase();
         if (!haystack.includes(texto)) {
           return false;
         }
@@ -170,7 +182,8 @@ export class MusicDataService {
       pais: (fila['País'] ?? '').trim() || 'Desconocido',
       artista: artista || 'Desconocido',
       anio,
-      album: album || 'Sin título'
+      album: album || 'Sin título',
+      sello: (fila['Sello'] ?? '').trim()
     };
   }
 

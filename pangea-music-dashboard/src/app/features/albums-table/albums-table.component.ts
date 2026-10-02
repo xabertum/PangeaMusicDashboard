@@ -3,7 +3,7 @@ import { Component, computed, effect, inject, signal } from '@angular/core';
 import { AlbumRecord } from '../../core/models/album-record.model';
 import { MusicDataService } from '../../core/services/music-data.service';
 
-type ColumnaOrden = keyof Pick<AlbumRecord, 'artista' | 'album' | 'genero' | 'subgenero' | 'pais' | 'anio'>;
+type ColumnaOrden = keyof Pick<AlbumRecord, 'artista' | 'album' | 'genero' | 'subgenero' | 'pais' | 'anio' | 'sello'>;
 
 const FILAS_POR_PAGINA = 15;
 
@@ -28,8 +28,9 @@ export class AlbumsTableComponent {
     return [...this.dataService.albumsFiltrados()].sort((a, b) => {
       const va = a[columna];
       const vb = b[columna];
-      if (va === null) return 1;
-      if (vb === null) return -1;
+      const vaVacio = va === null || va === '';
+      const vbVacio = vb === null || vb === '';
+      if (vaVacio || vbVacio) return Number(vaVacio) - Number(vbVacio);
       if (typeof va === 'number' && typeof vb === 'number') {
         return (va - vb) * factor;
       }

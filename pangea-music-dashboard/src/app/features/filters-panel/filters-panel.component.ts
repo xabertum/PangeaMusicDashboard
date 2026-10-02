@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { MusicDataService } from '../../core/services/music-data.service';
 
 /**
- * Panel lateral de filtros: género/continente, país, rango de años y
- * búsqueda de texto libre sobre artista/álbum/subgénero/año.
+ * Panel lateral de filtros: género/continente, país, sello, rango de años y
+ * búsqueda de texto libre sobre artista/álbum/subgénero/sello/año.
  */
 @Component({
   selector: 'app-filters-panel',
@@ -19,6 +19,13 @@ export class FiltersPanelComponent {
   readonly rangoAnios = this.dataService.rangoAnios;
 
   readonly busquedaPais = signal('');
+  readonly busquedaSello = signal('');
+
+  readonly sellosFiltrados = computed(() => {
+    const texto = this.busquedaSello().trim().toLowerCase();
+    const sellos = this.dataService.sellosDisponibles();
+    return texto ? sellos.filter((s) => s.toLowerCase().includes(texto)) : sellos;
+  });
 
   readonly paisesFiltrados = computed(() => {
     const texto = this.busquedaPais().trim().toLowerCase();
@@ -55,6 +62,21 @@ export class FiltersPanelComponent {
     return this.dataService.filters().paises.includes(pais);
   }
 
+  selloSeleccionado(sello: string): boolean {
+    return this.dataService.filters().sellos.includes(sello);
+  }
+
+  toggleSello(sello: string, marcado: boolean): void {
+    const actuales = this.dataService.filters().sellos;
+    const nuevos = marcado ? [...actuales, sello] : actuales.filter((s) => s !== sello);
+    this.dataService.actualizarFiltros({ sellos: nuevos });
+  }
+
+  limpiarSellos(): void {
+    this.busquedaSello.set('');
+    this.dataService.actualizarFiltros({ sellos: [] });
+  }
+
   toggleGenero(genero: string, marcado: boolean): void {
     const actuales = this.dataService.filters().generos;
     const nuevos = marcado ? [...actuales, genero] : actuales.filter((g) => g !== genero);
@@ -86,6 +108,7 @@ export class FiltersPanelComponent {
 
   limpiarFiltros(): void {
     this.busquedaPais.set('');
+    this.busquedaSello.set('');
     this.dataService.limpiarFiltros();
   }
 }

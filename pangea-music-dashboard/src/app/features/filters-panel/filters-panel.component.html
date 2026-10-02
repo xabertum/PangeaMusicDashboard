@@ -5,7 +5,7 @@
 
   <div class="filter-group">
     <div class="filter-group-header">
-      <label for="busqueda-texto">Buscar artista / álbum / subgénero / año</label>
+      <label for="busqueda-texto">Buscar artista / álbum / subgénero / sello / año</label>
       <button type="button" class="btn-clear" aria-label="Limpiar búsqueda" title="Limpiar búsqueda" (click)="limpiarTextoBusqueda()">
         <svg aria-hidden="true" viewBox="0 0 24 24">
           <path d="M4 7h16M10 11v6M14 11v6M9 7l1-3h4l1 3m-9 0 1 13h10l1-13" />
@@ -95,6 +95,35 @@
             (change)="togglePais(pais, $any($event.target).checked)"
           />
           {{ pais }}
+        </label>
+      }
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-group-header">
+      <label for="busqueda-sello">Sello</label>
+      <button type="button" class="btn-clear" aria-label="Limpiar filtro de sello" title="Limpiar filtro de sello" (click)="limpiarSellos()">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 7h16M10 11v6M14 11v6M9 7l1-3h4l1 3m-9 0 1 13h10l1-13" />
+        </svg>
+      </button>
+    </div>
+    <input
+      id="busqueda-sello"
+      type="search"
+      placeholder="Filtrar sellos…"
+      [(ngModel)]="busquedaSello"
+    />
+    <div class="checkbox-list checkbox-list--tall">
+      @for (sello of sellosFiltrados(); track sello) {
+        <label class="checkbox-item">
+          <input
+            type="checkbox"
+            [checked]="selloSeleccionado(sello)"
+            (change)="toggleSello(sello, $any($event.target).checked)"
+          />
+          {{ sello }}
         </label>
       }
     </div>
